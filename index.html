@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সুবর্ণ বার্তা | Haripur Islamia Senior Madrasa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Orbitron:wght@400;700&family=Tiro+Bangla:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOADER with Fingerprint Scanner -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <h1 class="loader-title">সুবর্ণ জয়ন্তী উৎসব</h1>
+            <p class="loader-subtitle">Haripur Islamia Senior Madrasa</p>
+
+            <!-- Fingerprint Scanner -->
+            <div class="fingerprint-area" id="fingerprint-area">
+                <div class="scanner-ring ring1"></div>
+                <div class="scanner-ring ring2"></div>
+                <div class="scanner-ring ring3"></div>
+                <div class="fingerprint-icon">
+                    <svg viewBox="0 0 100 100" class="fp-svg">
+                        <path class="fp-line" d="M50,10 Q70,25 70,50 Q70,75 50,90" />
+                        <path class="fp-line" d="M50,15 Q65,28 65,50 Q65,72 50,85" />
+                        <path class="fp-line" d="M50,20 Q60,32 60,50 Q60,68 50,80" />
+                        <path class="fp-line" d="M50,25 Q55,35 55,50 Q55,65 50,75" />
+                        <path class="fp-line" d="M50,10 Q30,25 30,50 Q30,75 50,90" />
+                        <path class="fp-line" d="M50,15 Q35,28 35,50 Q35,72 50,85" />
+                        <path class="fp-line" d="M50,20 Q40,32 40,50 Q40,68 50,80" />
+                        <path class="fp-line" d="M50,25 Q45,35 45,50 Q45,65 50,75" />
+                    </svg>
+                </div>
+                <div class="scan-beam"></div>
+            </div>
+
+            <p class="scan-status" id="scan-status">আঙুল স্পর্শ করুন</p>
+            <p class="scan-status-en" id="scan-status-en">TOUCH TO SCAN</p>
+
+            <!-- Access Granted Badge -->
+            <div class="access-granted-badge" id="access-badge">
+                <span class="check-icon">✓</span>
+                <span>ACCESS GRANTED</span>
+            </div>
+        </div>
+
+        <div class="corner-deco top-left"></div>
+        <div class="corner-deco top-right"></div>
+        <div class="corner-deco bottom-left"></div>
+        <div class="corner-deco bottom-right"></div>
+    </div>
+
+    <!-- Curtain Layer - STARTS CLOSED -->
+    <div class="curtain-layer closed" id="curtain">
+        <div class="curtain-panel left"></div>
+        <div class="curtain-panel right"></div>
+        <canvas id="curtain-sparkle"></canvas>
+        <div class="curtain-content">
+            <h2>অনুষ্ঠানের শুভ সূচনা</h2>
+            <div class="school-logo">✦</div>
+        </div>
+    </div>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Audio -->
+    <audio id="bgm" loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <main>
+        <!-- Slide 1: Welcome -->
+        <section class="slide active" data-id="1">
+            <div class="welcome-content">
+                <h1 class="hero-title animate-pop-in">স্বাগতম</h1>
+                <p class="welcome-sub">সুবর্ণ জয়ন্তী উৎসব ২০২৫</p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Principal -->
+        <section class="slide" data-id="2">
+            <div class="content-box glass animate-tilt">
+                <h2 class="role-title">ভারপ্রাপ্ত সুপার</h2>
+                <h3 class="name-title">মোঃ আব্দুল হালিম</h3>
+                <p class="quote">"হারিপুর ইসলামিয়া সিনিয়র মাদ্রাসা"</p>
+            </div>
+        </section>
+
+        <!-- Slide 3: History -->
+        <section class="slide" data-id="3">
+            <h1 class="big-year animate-float">১৯৭৫</h1>
+            <div class="text-block">
+                <p>একটি স্বপ্নের সূচনা</p>
+                <p>হারিপুর ইসলামিয়া সিনিয়র মাদ্রাসা</p>
+            </div>
+        </section>
+
+        <!-- Slide 4: Nostalgia -->
+        <section class="slide" data-id="4">
+            <div class="stagger-container">
+                <p class="stagger-text">বিদ্যুৎ ছিল না...</p>
+                <p class="stagger-text">কম্পিউটার ছিল না...</p>
+                <p class="stagger-text highlight">তবু অপেক্ষা ছিল, স্বপ্ন ছিল...</p>
+            </div>
+        </section>
+
+        <!-- Slide 5: Memory -->
+        <section class="slide" data-id="5">
+            <div class="memory-card glass">
+                <p>কঠোর শাসন আর স্নেহের বাঁধন...</p>
+                <h2 class="discipline-text">আমাদের মানুষ করেছে</h2>
+            </div>
+        </section>
+
+        <!-- Slide 6: Evolution -->
+        <section class="slide" data-id="6">
+            <div class="evolution-box">
+                <p>সময় বদলেছে...</p>
+                <div class="icon-row animate-pulse">
+                    <span>💡</span><span>💻</span><span>🚀</span>
+                </div>
+                <p>আলো এসেছে... প্রযুক্তি এসেছে...</p>
+            </div>
+        </section>
+
+        <!-- Slide 7: Impact -->
+        <section class="slide" data-id="7">
+            <div class="impact-content">
+                <p>এই প্রতিষ্ঠান শুধু শিক্ষা দেয়নি</p>
+                <h1 class="gold-gradient">মানুষ গড়েছে</h1>
+            </div>
+        </section>
+
+        <!-- Slide 8: Grand Message -->
+        <section class="slide" data-id="8">
+            <div class="finale-box animate-zoom">
+                <div class="logo-circle">৫০</div>
+                <h1 class="main-title shimmer-text">সুবর্ণ বার্তা</h1>
+                <h2>হারিপুর ইসলামিয়া সিনিয়র মাদ্রাসা</h2>
+                <p class="date-range">১৯৭৫ – ২০২৫</p>
+                <p class="sub-text">৫০ বছরের গৌরবময় যাত্রা</p>
+            </div>
+        </section>
+
+        <!-- Slide 9: Inauguration -->
+        <section class="slide" data-id="9">
+            <div class="grand-opening">
+                <h1 class="opening-title">শুভ উদ্বোধন</h1>
+                <p>অনুষ্ঠান শুরু হোক...</p>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="navigation-overlay">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            <p class="instruction">↑↓ Arrow Keys or Click</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
